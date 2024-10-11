@@ -12,10 +12,7 @@ pub struct Cli {
 #[derive(Subcommand, Debug)]
 pub enum Action {
     /// All actions must be executed after logging in.
-    Login {
-        /// The password used for login.
-        password: String,
-    },
+    Login,
 
     /// Clear local login status.
     Logout,

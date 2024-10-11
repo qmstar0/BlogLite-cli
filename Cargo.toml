@@ -26,3 +26,4 @@ colored = "2"
 
 chrono = "0.4.38"
 binrw = "0.14.0"
+rpassword = "7.3.1"

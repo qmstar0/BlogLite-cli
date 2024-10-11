@@ -105,8 +105,12 @@ async fn main() -> Result<()> {
 
             Some("successful.".to_string())
         } // _ => None,
-        Action::Login { password } => {
-            let token = api::login(password).await.unwrap_or_else(on_error);
+        Action::Login => {
+            let password = rpassword::prompt_password("password: ")
+                .map_err(Error::from)
+                .unwrap_or_else(on_error);
+
+            let token = api::login(&password).await.unwrap_or_else(on_error);
             Config::new(&token).save().unwrap();
             Some("login successful.".to_string())
         }

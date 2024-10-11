@@ -22,6 +22,7 @@ impl<D> Response<D> {
             "INVALID_PARAMETERS" => "The request contains invalid parameters.",
             "INVALID_ACTION" => "The action is invalid or unsupported.",
             "RESOURCE_NOT_EXIST" => "The requested resource does not exist.",
+            "PWD_ERROR" => "Wrong password, please log in again.",
             _ => "",
         };
         result.to_string()
